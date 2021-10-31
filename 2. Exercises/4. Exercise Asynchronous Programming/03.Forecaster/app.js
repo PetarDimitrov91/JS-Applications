@@ -9,17 +9,23 @@ function attachEvents() {
     submitBtn.addEventListener('click', fetchWeatherData);
 
     async function fetchWeatherData() {
+        const forecastsDiv = document.querySelector('.forecasts');
         const url = 'http://localhost:3030/jsonstore/forecaster/locations';
+
+        if (forecastsDiv) {
+            forecastsDiv.replaceWith();
+        }
 
         divForecast.style.display = 'none';
         upcomingForecast.style.display = ''
         forecastDisplay.textContent = 'Current conditions';
 
         try {
+
             const response = await fetch(url);
             const data = await response.json();
 
-            const [searchedLocation] = data.filter(e => e.name === locationInput.value);
+            const [searchedLocation] = data.filter(e => e.name.toLowerCase() === locationInput.value.toLowerCase());
             locationInput.value = '';
 
             if (searchedLocation === undefined || response.status !== 200) {
@@ -77,15 +83,12 @@ function attachEvents() {
                 create('span', {className: 'forecast-data'}),
                 create('span', {className: 'forecast-data'}, condition)
             ));
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
-//TODO
 
         currentForecast.appendChild(todayForecast);
+
+        //adding the special symbols to the document using innerHTML because the factory function needs to be extended
         document.querySelector('#forecast .forecasts .condition').innerHTML = conditionCode;
+        document.querySelectorAll('#forecast .forecasts .forecast-data')[1].innerHTML = `${low}&#176/${high}&#176`;
 
     }
 
