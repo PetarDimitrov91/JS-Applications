@@ -70,6 +70,8 @@ button {
   margin: 0 auto;
 }
 
+input[name="user5Username"],
+input[name="user4Username"],
 input[name="user3Username"],
 input[name="user2Username"],
 input[name="user1Username"] {
@@ -79,12 +81,16 @@ input[name="user1Username"] {
 
 #user1HiddenFields input,
 #user2HiddenFields input,
-#user3HiddenFields input {
+#user3HiddenFields input,
+#user4HiddenFields input,
+#user5HiddenFields input {
   width: 100%;
 }
 
 #user1HiddenFields,
 #user2HiddenFields,
-#user3HiddenFields {
+#user3HiddenFields,
+#user4HiddenFields,
+#user5HiddenFields {
   display: none;
 }
