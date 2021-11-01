@@ -2,7 +2,7 @@ async function getInfo() {
     const inputRef = document.getElementById('stopId');
     const url = `http://localhost:3030/jsonstore/bus/businfo/${inputRef.value}`;
     const outputRef = document.getElementById('stopName');
-    const resultDIv =  document.getElementById('result');
+    const resultDIv = document.getElementById('result');
     const ulElementRef = document.getElementById('buses');
 
     try {
@@ -30,6 +30,4 @@ async function getInfo() {
     } catch (ex) {
         outputRef.textContent = ex.message;
     }
-
-
 }
