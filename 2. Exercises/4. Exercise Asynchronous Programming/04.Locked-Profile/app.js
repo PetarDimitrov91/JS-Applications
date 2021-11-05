@@ -43,7 +43,7 @@ async function lockedProfile() {
                     type: 'radio',
                     name: `user${profileCount}Locked`,
                     value: 'lock',
-                    checked: false
+                    checked: true
                 }),
                 create('label', {}, 'Unlock'),
                 create('input', {

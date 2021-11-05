@@ -15,6 +15,11 @@ function attachEvents() {
     refreshBtn.addEventListener('click', displayMessages);
 
     async function sendMessage() {
+
+        if (!messageInput.value.trim() && !nameInput.value.trim()) {
+            return;
+        }
+
         const message = {
             author: nameInput.value,
             content: messageInput.value
