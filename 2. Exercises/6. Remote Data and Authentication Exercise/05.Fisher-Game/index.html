@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biggest Catch</title>
-    <link rel="stylesheet" href="./static/styles.css">
-    <script type="module" src="./app.js"></script>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="src/app.js"></script>
 </head>
 
 <body>
@@ -19,40 +19,13 @@
                 <a id="logout" href="javascript:void(0)">Logout</a>
             </div>
             <div id="guest">
-                <a id="login" href="#">Login</a>
-                <a id="register" href="#">Register</a>
+                <a id="login" href="login.html">Login</a>
+                <a id="register" href="register.html">Register</a>
             </div>
             <p class="email">Welcome, <span>guest</span></p>
         </nav>
     </header>
     <main>
-    </main>
-
-    <section id="views">
-        <!-- Register -->
-        <section id="register-view">
-            <h2>Register</h2>
-            <form id="register">
-                <label>Email: <input type="text" name="email"></label>
-                <label>Password: <input type="password" name="password"></label>
-                <label>Repeat: <input type="password" name="rePass"></label>
-                <p class="notification"></p>
-                <button>Register</button>
-            </form>
-        </section>
-
-        <!-- Login -->
-        <section id="login-view">
-            <h2>Login</h2>
-            <form id="login">
-                <label>Email: <input type="text" name="email"></label>
-                <label>Password: <input type="password" name="password"></label>
-                <p class="notification"></p>
-                <button>Login</button>
-            </form>
-        </section>
-
-        <!-- Home Page -->
         <section id="home-view">
             <fieldset id="main">
                 <legend>Catches</legend>
@@ -113,8 +86,7 @@
                 </form>
             </aside>
         </section>
-
-    </section>
+    </main>
 </body>
 
 </html>

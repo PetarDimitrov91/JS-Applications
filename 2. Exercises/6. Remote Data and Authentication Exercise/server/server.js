@@ -755,7 +755,7 @@
     const mode = process.argv[2] == '-dev' ? 'dev' : 'prod';
 
     const files = {
-        index: mode == 'prod' ? require$$0 : fs__default['default'].readFileSync('./client/index.html', 'utf-8')
+        index: mode == 'prod' ? require$$0 : fs__default['default'].readFileSync('./client/example.html', 'utf-8')
     };
 
     var admin = (method, tokens, query, body) => {

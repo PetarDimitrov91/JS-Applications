@@ -8,9 +8,9 @@ const url = 'http://localhost:3030/jsonstore/collections/books';
 
 editForm.style.display = 'none';
 createForm.addEventListener('submit', addBook);
+editForm.addEventListener('submit', saveBook);
 loadBtn.addEventListener('click', loadBooks)
 tableBody.addEventListener('click', buttonChecker);
-editForm.addEventListener('submit', saveBook);
 
 async function addBook(event) {
     submitBtn.disabled = true;
@@ -31,42 +31,29 @@ async function addBook(event) {
     const body = {author, title};
     const options = {
         method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
         body: JSON.stringify(body)
     };
 
-    try {
-        await fetch(url, options);
-    } catch (e) {
-        alert(e.message);
-    } finally {
-        submitBtn.disabled = false;
-        await loadBooks();
-    }
+    await Promise.all([request(url, options), loadBooks()]);
+
+    submitBtn.disabled = false;
 }
 
 async function loadBooks() {
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+    const data = await request(url);
 
-        tableBody.replaceChildren();
+    tableBody.replaceChildren();
 
-        Object.values(data).forEach(e => {
-            const bookElement = create('tr', {},
-                create('th', {}, e['title']),
-                create('th', {}, e['author']),
-                create('th', {},
-                    create('button', {id: e['_id']}, 'Edit'),
-                    create('button', {id: e['_id']}, 'Delete'),
-                ));
-            tableBody.appendChild(bookElement);
-        });
-    } catch (e) {
-        alert(e.message);
-    }
+    Object.values(data).forEach(e => {
+        const bookElement = create('tr', {},
+            create('th', {}, e['title']),
+            create('th', {}, e['author']),
+            create('th', {},
+                create('button', {id: e['_id']}, 'Edit'),
+                create('button', {id: e['_id']}, 'Delete'),
+            ));
+        tableBody.appendChild(bookElement);
+    });
 }
 
 async function buttonChecker(event) {
@@ -110,32 +97,43 @@ async function saveBook(event) {
 
     const options = {
         method: 'put',
-        headers: {
-            'Content-Type': 'application/json'
-        },
         body: JSON.stringify(body)
     }
-    try {
-        await fetch(updateUrl, options);
-    } catch (e) {
-        alert(e.message);
-    }
+
+    await request(updateUrl, options);
 
     editForm.reset()
-
     editForm.style.display = 'none';
     createForm.style.display = 'block';
 
     await loadBooks();
 }
 
-
 async function deleteBook(button) {
     const deleteUrl = `${url}/${button.dataset.id}`;
-    await fetch(deleteUrl, {method: 'delete'});
+    await request(deleteUrl, {method: 'delete'});
     button.parentElement.parentElement.remove();
 }
 
+async function request(url, options) {
+    if (options && options.body !== undefined) {
+        Object.assign(options, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+
+    const response = await fetch(url, options);
+
+    if (response.ok !== true) {
+        const error = await response.json();
+        alert(error.message);
+        throw new Error(error.message);
+    }
+
+    return await response.json();
+}
 
 function create(type, attributes, ...content) {
     const element = document.createElement(type);
