@@ -1,15 +1,16 @@
 const createForm = document.querySelector('#createForm');
-const editForm = document.querySelector('#createForm');
-const url = 'http://localhost:3030/jsonstore/collections/books';
+const editForm = document.querySelector('#editForm');
 const submitBtn = document.querySelector('#createForm button');
-const saveBtn = document.querySelector('#saveForm button');
+const saveBtn = document.querySelector('#editForm button');
 const loadBtn = document.getElementById('loadBooks');
 const tableBody = document.querySelector('tbody');
+const url = 'http://localhost:3030/jsonstore/collections/books';
 
+editForm.style.display = 'none';
 createForm.addEventListener('submit', addBook);
 loadBtn.addEventListener('click', loadBooks)
 tableBody.addEventListener('click', buttonChecker);
-editForm.addEventListener('submit', editBook);
+editForm.addEventListener('submit', saveBook);
 
 async function addBook(event) {
     submitBtn.disabled = true;
@@ -71,7 +72,7 @@ async function loadBooks() {
 async function buttonChecker(event) {
     if (event.target.tagName === 'BUTTON' && event.target.textContent === 'Edit') {
         try {
-            await editBook(event.target);
+            editBook(event.target);
         } catch (e) {
             alert(e.message);
         }
@@ -84,21 +85,27 @@ async function buttonChecker(event) {
     }
 }
 
-async function editBook(button) {
+function editBook(button) {
+    editForm.style.display = 'block';
+    createForm.style.display = 'none';
 
     const [name, author] = button.parentElement.parentElement.children;
 
-    document.querySelector('#editForm[name=title]').value = name.textContent;
-    document.querySelector('#editForm[name=author]').value = author.textContent;
+    editForm.querySelector('[name=title]').value = name.textContent;
+    editForm.querySelector('[name=author]').value = author.textContent;
+    saveBtn.dataset.id = button.dataset.id;
+}
 
-    submitBtn.textContent = 'Save';
+async function saveBook(event) {
+    event.preventDefault();
 
-    const updateUrl = `${url}/${button.dataset.id}`;
+    const updateUrl = `${url}/${saveBtn.dataset.id}`;
     const formData = new FormData(editForm);
 
     const body = {
         author: formData.get('author'),
-        title: formData.get('title')
+        title: formData.get('title'),
+        _id: saveBtn.dataset.id
     }
 
     const options = {
@@ -108,7 +115,18 @@ async function editBook(button) {
         },
         body: JSON.stringify(body)
     }
-    await fetch(updateUrl, options);
+    try {
+        await fetch(updateUrl, options);
+    } catch (e) {
+        alert(e.message);
+    }
+
+    editForm.reset()
+
+    editForm.style.display = 'none';
+    createForm.style.display = 'block';
+
+    await loadBooks();
 }
 
 
