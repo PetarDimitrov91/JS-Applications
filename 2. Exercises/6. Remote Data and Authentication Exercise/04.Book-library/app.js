@@ -23,7 +23,7 @@ async function addBook(event) {
     createForm.reset();
 
     if (!title || !author) {
-        alert('All field are required');
+        alert('All fields are required');
         submitBtn.disabled = false;
         return;
     }

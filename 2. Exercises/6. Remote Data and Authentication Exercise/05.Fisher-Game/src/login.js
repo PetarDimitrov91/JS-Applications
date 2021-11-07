@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('logout').style.display = 'none';
+
     const form = document.querySelector('form');
     form.addEventListener('submit', onLogin);
 });
@@ -29,9 +31,9 @@ async function onLogin(event) {
             id: data._id,
             token: data.accessToken
         };
-        //setting the user info into the browser session storage
+
         sessionStorage.setItem('userData', JSON.stringify(userData));
-        //redirecting the user to the home page
+
         window.location = 'index.html';
 
     } catch (err) {
