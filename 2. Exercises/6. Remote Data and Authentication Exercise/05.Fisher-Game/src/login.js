@@ -33,9 +33,7 @@ async function onLogin(event) {
         };
 
         sessionStorage.setItem('userData', JSON.stringify(userData));
-
         window.location = 'index.html';
-
     } catch (err) {
         alert(err.message)
     }

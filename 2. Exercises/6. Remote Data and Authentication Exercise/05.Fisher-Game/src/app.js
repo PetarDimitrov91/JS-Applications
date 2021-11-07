@@ -91,11 +91,14 @@ async function addCatch(event) {
             angler, weight, species, location, bait, captureTime
         })
     };
+    document.getElementById('addForm').reset();
 
     try {
-        await Promise.all([fetch('http://localhost:3030/data/catches', options), loadData()]);
+        await fetch('http://localhost:3030/data/catches', options)
     } catch (error) {
         alert(error.message)
+    }finally {
+        await loadData();
     }
 }
 
