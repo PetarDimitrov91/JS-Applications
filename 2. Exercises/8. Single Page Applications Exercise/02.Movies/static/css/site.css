@@ -40,6 +40,6 @@
     box-shadow: 0 5px 10px #cccccc;
 }
 
-#movie{
-
+#views {
+    display: none;
 }

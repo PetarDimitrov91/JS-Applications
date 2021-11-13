@@ -8,7 +8,7 @@
     <link href="../static/css/site.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="main/main.js" type="module"></script>
+    <script src="src/main/main.js" type="module"></script>
 </head>
 
 <body>
@@ -20,19 +20,22 @@
                 <a id="greeting" class="nav-link">Welcome, email</a>
             </li>
             <li class="nav-item">
-                <a id="logout" class="nav-link" href="#">Logout</a>
+                <a id="logout" class="nav-link user" href="#">Logout</a>
             </li>
-            <li id="login" class="nav-item">
+            <li id="login" class="nav-item guest">
                 <a class="nav-link" href="#">Login</a>
             </li>
             <li class="nav-item">
-                <a id="register" class="nav-link" href="#">Register</a>
+                <a id="register" class="nav-link guest" href="#">Register</a>
             </li>
         </ul>
     </nav>
 
     <main>
 
+    </main>
+
+    <div id="views">
         <section id="home-page">
             <div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
                 <img src="https://slicksmovieblog.files.wordpress.com/2014/08/cropped-movie-banner-e1408372575210.jpg"
@@ -44,7 +47,7 @@
             <h1 class="text-center">Movies</h1>
 
             <section id="add-movie-button">
-                <a href="#" class="btn btn-warning ">Add Movie</a>
+                <a href="#" class="btn btn-warning user">Add Movie</a>
             </section>
 
             <section id="movie">
@@ -59,7 +62,7 @@
         </section>
 
         <section id="add-movie">
-            <form class="text-center border border-light p-5" action="#" method="">
+            <form id="addForm" class="text-center border border-light p-5" action="#" method="">
                 <h1>Add Movie</h1>
                 <div class="form-group">
                     <label for="title">Movie Title</label>
@@ -83,12 +86,14 @@
                     <h1>Movie title: Black Widow</h1>
 
                     <div class="col-md-8">
-                        <img class="img-thumbnail" src="https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg"
+                        <img class="img-thumbnail"
+                             src="https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg"
                              alt="Movie">
                     </div>
                     <div class="col-md-4 text-center">
                         <h3 class="my-3 ">Movie Description</h3>
-                        <p>Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous
+                        <p>Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a
+                            dangerous
                             conspiracy
                             with ties to her past arises. Comes on the screens 2020.</p>
                         <a class="btn btn-danger" href="#">Delete</a>
@@ -101,7 +106,7 @@
         </section>
 
         <section id="edit-movie">
-            <form class="text-center border border-light p-5" action="#" method="">
+            <form id="editForm" class="text-center border border-light p-5" action="#" method="">
                 <h1>Edit Movie</h1>
                 <div class="form-group">
                     <label for="title">Movie Title</label>
@@ -154,8 +159,7 @@
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
         </section>
-
-    </main>
+    </div>
 
     <footer class="page-footer font-small">
         <div class="footer-copyright text-center py-3">© 2020

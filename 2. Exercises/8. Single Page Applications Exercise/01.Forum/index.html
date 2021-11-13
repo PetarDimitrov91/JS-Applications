@@ -2,30 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/3cd69e2433.js" crossorigin="anonymous"></script>
+    <script src="./src/app.js" type="module"></script>
     <title>SoftUni Forum</title>
 </head>
 
 <body>
-
     <header>
         <div class="mini-navbar-wrap">
             <div class="logo-wrap">
                 <p class="logo"><span class="logo">SoftUni Forum</span></p>
             </div>
-            <div class="mini-navbar">
-
-            </div>
+            <div class="mini-navbar"></div>
         </div>
         <nav>
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a id="homeLink" href="#">Home</a>
                 </li>
             </ul>
         </nav>
@@ -33,42 +31,7 @@
 
     <!-- homepage -->
     <div class="container">
-        <main>
-            <div class="new-topic-border">
-                <div class="header-background">
-                    <span>New Topic</span>
-                </div>
-                <form>
-                    <div class="new-topic-title">
-                        <label for="topicName">Title <span class="red">*</span></label>
-                        <input type="text" name="topicName" id="topicName">
-                    </div>
-                    <div class="new-topic-title">
-                        <label for="username">Username <span class="red">*</span></label>
-                        <input type="text" name="username" id="username">
-                    </div>
-                    <div class="new-topic-content">
-                        <label for="postText">Post <span class="red">*</span></label>
-                        <textarea type="text" name="postText" id="postText" rows="8" class="height"></textarea>
-                    </div>
-                    <div class="new-topic-buttons">
-                        <button class="cancel">Cancel</button>
-                        <button class="public">Post</button>
-                    </div>
-
-                </form>
-            </div>
-
-            <div class="topic-title">
-
-                <!-- topic component  -->
-                <div class="topic-container">
-                    
-                </div>
-                
-
-        </main>
-
+        <main></main>
     </div>
 
     <footer>
@@ -76,6 +39,75 @@
         <p>You can find the real SoftUni forum at this link:</p>
         <p><span><a href="https://softuni.bg/forum">https://softuni.bg/forum</a></span></p>
     </footer>
+
+    <div id="views">
+        <!-- home view -->
+        <section id="homeView">
+            <div class="new-topic-border">
+                <div class="header-background">
+                    <span>New Topic</span>
+                </div>
+                <form>
+                    <div class="new-topic-title">
+                        <label for="topicName">Title <span class="red">*</span></label>
+                        <input type="text" name="title" id="title" />
+                    </div>
+                    <div class="new-topic-title">
+                        <label for="username">Username <span class="red">*</span></label>
+                        <input type="text" name="author" id="author" />
+                    </div>
+                    <div class="new-topic-content">
+                        <label for="postText">Post <span class="red">*</span></label>
+                        <textarea type="text" name="text" id="text" rows="8" class="height"></textarea>
+                    </div>
+                    <div class="new-topic-buttons">
+                        <button class="cancel">Cancel</button>
+                        <button class="public">Post</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="topic-title">
+                <!-- topic component  -->
+                <div id='topicContainer' class="topic-container"></div>
+            </div>
+        </section>
+
+        <!-- topic details -->
+
+        <section id="detailsView">
+            <div class="container">
+                <!-- theme content  -->
+                <div class="theme-content">
+                    <!-- theme-title  -->
+                    <div class="theme-title">
+                        <div class="theme-name-wrapper">
+                            <div class="theme-name">
+                                <h2></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- comment  -->
+
+                    <div id="postContainer" class="comment"></div>
+
+                    <div class="answer-comment">
+                        <p><span>currentUser</span> comment:</p>
+                        <div class="answer">
+                            <form id='answerForm'>
+                                <textarea name="content" id="comment" cols="30" rows="10"></textarea>
+                                <div>
+                                    <label for="username">Username<span class="red">*</span></label>
+                                    <input type="text" name="author" id="username" />
+                                </div>
+                                <button>Post</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>
