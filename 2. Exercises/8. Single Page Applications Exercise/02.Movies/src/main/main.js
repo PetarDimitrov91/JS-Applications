@@ -115,7 +115,6 @@ document.getElementById('movie').addEventListener('click', async (event) => {
     const userData = JSON.parse(sessionStorage.getItem('userData'));
     let userLikes;
 
-
     if (userData === null) {
         likeBtn.remove();
         deleteBtn.remove();

@@ -9,9 +9,6 @@ export class EditView extends View {
     async editMovie(button, detailsView, event) {
         event.preventDefault();
 
-        console.log(button.dataset.movieId);
-        console.log(detailsView);
-
         const form = document.querySelector('#editForm');
         const formData = new FormData(form);
 
