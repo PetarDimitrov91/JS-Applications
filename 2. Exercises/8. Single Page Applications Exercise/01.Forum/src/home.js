@@ -1,4 +1,4 @@
-import {showDetails} from './detail.js';
+import {showDetails} from './onTopic.js';
 import {createEl, request, showView} from './dom.js';
 
 const section = document.getElementById('homeView');
