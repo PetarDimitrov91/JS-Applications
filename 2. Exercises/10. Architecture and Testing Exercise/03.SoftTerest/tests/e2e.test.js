@@ -43,7 +43,7 @@ describe('E2E tests', function () {
         if (DEBUG) {
             browser = await chromium.launch({ headless: false, slowMo: 500 });
         } else {
-            browser = await chromium.launch();
+            browser = await chromium.launch({headless: false, slowMo: 500});
         }
     });
 
@@ -174,7 +174,7 @@ describe('E2E tests', function () {
         const password = '123456';
 
 
-        // Login user
+        // LoginView user
         beforeEach(async () => {
             const endpoint = '**' + endpoints.login;
 
