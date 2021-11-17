@@ -3,8 +3,8 @@ import {html, render} from './node_modules/lit-html/lit-html.js';
 
 const towns = townNames.map(t => ({town: t, searched: false}));
 const townsList = document.querySelector('#towns');
-const inputRef = document.querySelector('#searchText');
-const resRef = document.querySelector('#result');
+const input = document.querySelector('#searchText');
+const res = document.querySelector('#result');
 
 document.querySelector('button').addEventListener('click', search);
 
@@ -21,15 +21,15 @@ function update() {
 }
 
 function search() {
-    const searched = inputRef.value.trim().toLocaleLowerCase();
+    const searched = input.value.trim().toLocaleLowerCase();
     const matches = towns.filter(c => searched && c.town.toLowerCase().includes(searched)).length;
 
     towns.forEach(o => {
         o.searched = searched && o.town.toLocaleLowerCase().includes(searched);
     });
 
-    resRef.textContent = `${matches} matches found`;
-    inputRef.value = '';
+    res.textContent = `${matches} matches found`;
+    input.value = '';
 
     update();
 }
