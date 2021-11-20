@@ -12,5 +12,5 @@ document.querySelector('form').addEventListener('submit', (event) => {
 const listTemp = (towns) => html `
     <ul>
         ${towns.map(t => html`
-            <li>${t}</li>`)};
+            <li>${t}</li>`)}
     </ul>`;
