@@ -1,12 +1,15 @@
 import {View} from "./View.js";
-import {html} from "../utils.js";
+import {html, until} from "../utils.js";
+import {getAllFurniture} from "../api/data.js";
 
 export class Catalog extends View {
     constructor(root) {
         super(root);
     }
 
-    prepareView() {
+    async prepareView() {
+        const items = this.loadItems();
+
         return () => html`
             <div class="container">
                 <div class="row space-top">
@@ -16,53 +19,34 @@ export class Catalog extends View {
                     </div>
                 </div>
                 <div class="row space-top">
-                    <div class="col-md-4">
-                        <div class="card text-white bg-primary">
-                            <div class="card-body">
-                                <img src="/images/table.png"/>
-                                <p>Description here</p>
-                                <footer>
-                                    <p>Price: <span>235 $</span></p>
-                                </footer>
-                                <div>
-                                    <a href="/details" class="btn btn-info">Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-white bg-primary">
-                            <div class="card-body">
-                                <img src="/images/sofa.jpg"/>
-                                <p>Description here</p>
-                                <footer>
-                                    <p>Price: <span>1200 $</span></p>
-                                </footer>
-                                <div>
-                                    <a href="/details" class="btn btn-info">Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-white bg-primary">
-                            <div class="card-body">
-                                <img src="/images/chair.jpg"/>
-                                <p>Description here</p>
-                                <footer>
-                                    <p>Price: <span>55 $</span></p>
-                                </footer>
-                                <div>
-                                    <a href="/details" class="btn btn-info">Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    ${until(items, html`<p>Loading &hellip;</p>`)}
                 </div>
-            </div>
-        `;
+            </div>`;
     }
 
+    async loadItems() {
+        const items = await getAllFurniture();
+
+        const itemTemp = () => html`
+            ${items.map(item => html`
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary">
+                        <div class="card-body">
+                            <img src=${item.img}/>
+                            <p>${item.description}</p>
+                            <footer>
+                                <p>Price: <span>${item.price} $</span></p>
+                            </footer>
+                            <div>
+                                <a href=${`/details/${item._id}`} class="btn btn-info">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`)}`;
+
+        return itemTemp();
+
+    }
 }
 
 

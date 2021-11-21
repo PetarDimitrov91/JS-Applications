@@ -5,20 +5,20 @@ const login = userSession.login;
 const logout = userSession.logout;
 const register = userSession.register;
 
-async function createFurniture(furniture) {
-    return api.post('/data/catalog', furniture);
+async function createFurniture(item) {
+    return api.post('/data/catalog', item);
 }
 
 async function getAllFurniture() {
     return api.get('/data/catalog');
 }
 
-async function getDetails(id) {
+async function getItem(id) {
     return api.get('/data/catalog/' + id);
 }
 
-async function updateFurniture(id) {
-    return api.put('/data/catalog/' + id);
+async function updateFurniture(id, item) {
+    return api.put('/data/catalog/' + id, item);
 }
 
 async function delFurniture(id) {
@@ -35,7 +35,7 @@ export {
     register,
     createFurniture,
     getAllFurniture,
-    getDetails,
+    getItem,
     updateFurniture,
     delFurniture,
     getMyFurniture

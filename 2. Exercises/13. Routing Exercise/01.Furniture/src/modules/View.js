@@ -1,3 +1,5 @@
+import {Navigation} from "./Navigation.js";
+
 export class View {
     constructor(root) {
         if (new.target === View) {
@@ -6,12 +8,16 @@ export class View {
         this.root = root;
     }
 
-    prepareView(){
+    async showView(ctx) {
+        const id = ctx.params.id;
+        const temp = await this.prepareView(id);
+
+        ctx.render(temp());
+
+        Navigation.updateNav();
     }
 
-    showView(ctx) {
-        const temp = this.prepareView();
-        ctx.render(temp());
+    prepareView() {
     }
 
     attachView() {

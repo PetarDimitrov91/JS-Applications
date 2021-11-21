@@ -8,7 +8,6 @@ import {Edit} from "./modules/Edit.js";
 import {Register} from "./modules/Register.js";
 import {Login} from "./modules/Login.js";
 
-
 const nav = new Navigation(document.body);
 
 const root = document.querySelector('main');
@@ -21,7 +20,6 @@ const loginView = new Login(root)
 const detailsView = new Details(root);
 const editView = new Edit(root);
 
-
 page(decorateContext);
 page('/', catalogView.showView.bind(catalogView));
 page('/catalog', catalogView.showView.bind(catalogView));
@@ -29,8 +27,8 @@ page('/create', createView.showView.bind(createView));
 page('/my-furniture', myFurnitureView.showView.bind(myFurnitureView));
 page('/register', registerView.showView.bind(registerView));
 page('/login', loginView.showView.bind(loginView));
-page('/details', detailsView.showView.bind(detailsView));
-page('/edit', editView.showView.bind(editView));
+page('/details/:id', detailsView.showView.bind(detailsView));
+page('/edit/:id', editView.showView.bind(editView));
 page.start();
 
 function decorateContext(ctx, next) {
