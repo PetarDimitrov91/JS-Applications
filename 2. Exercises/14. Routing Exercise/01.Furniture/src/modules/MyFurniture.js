@@ -14,7 +14,7 @@ export class MyFurniture extends View {
             <div class="container">
                 <div class="row space-top">
                     <div class="col-md-12">
-                        <h1>Welcome to Furniture System</h1>
+                        <h1>My Furniture</h1>
                         <p>Select furniture from the catalog to view details.</p>
                     </div>
                 </div>

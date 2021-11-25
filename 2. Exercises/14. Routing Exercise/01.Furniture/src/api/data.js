@@ -29,6 +29,11 @@ async function getMyFurniture(userId) {
     return api.get(`/data/catalog?where=_ownerId%3D%22${userId}%22`);
 }
 
+async function getSearchedItem(make) {
+    // localhost:3030/data/catalog?where=make%20LIKE%20%22chair%22
+    return api.get(`/data/catalog?where=make%20LIKE%20%22${make}%22`);
+}
+
 export {
     login,
     logout,
@@ -38,5 +43,6 @@ export {
     getItem,
     updateFurniture,
     delFurniture,
-    getMyFurniture
+    getMyFurniture,
+    getSearchedItem
 };

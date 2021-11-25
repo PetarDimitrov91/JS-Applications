@@ -11,9 +11,7 @@ export class View {
     async showView(ctx) {
         const id = ctx.params.id;
         const temp = await this.prepareView(id);
-
         ctx.render(temp());
-
         Navigation.updateNav();
     }
 

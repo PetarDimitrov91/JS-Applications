@@ -1,10 +1,12 @@
 import {View} from "./View.js";
-import {html, page, render} from "../utils.js";
+import {html, page, render, until} from "../utils.js";
 import {logout} from "../api/userSession.js";
+import {getSearchedItem} from "../api/data.js";
 
 export class Navigation extends View {
     constructor(root) {
         super(root);
+
         this.prepareView(root);
     }
 
@@ -12,6 +14,10 @@ export class Navigation extends View {
         const navTemp = () => html`
             <header>
                 <h1><a href="/">Furniture Store</a></h1>
+                <form @submit=${this.showResults.bind(this)} id="search-field">
+                    <input type="search" name="search" class="search">
+                    <input type="submit" class="searchBtn" value="Search"/>
+                </form>
                 <nav>
                     <a id="catalogLink" href="/catalog" class="active">Dashboard</a>
                     <div id="user">
@@ -38,6 +44,54 @@ export class Navigation extends View {
     async signOut() {
         await logout();
         page.redirect('/');
+    }
+
+    async showResults(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const make = formData.get('search')
+
+        const searchedItems = this.loadSearchedItem(make);
+
+        const temp = () => html`
+            <div class="container">
+                <div class="row space-top">
+                    <div class="col-md-12">
+                        <h1>Welcome to Furniture System</h1>
+                        <p>Select furniture from the catalog to view details.</p>
+                    </div>
+                </div>
+                <div class="row space-top">
+                    ${until(searchedItems, html`<p>Loading &hellip;</p>`)}
+                </div>
+            </div>\`;
+        `;
+
+        render(temp(), document.querySelector('main'));
+    }
+
+    async loadSearchedItem(make) {
+        const items = await getSearchedItem(make);
+
+        const itemTemp = () => html`
+            ${items.map(item => html`
+                <div class="col-md-4">
+                    <div class="card text-white bg-primary">
+                        <div class="card-body">
+                            <img src=${item.img}/>
+                            <p>${item.description}</p>
+                            <footer>
+                                <p>Price: <span>${item.price} $</span></p>
+                            </footer>
+                            <div>
+                                <a href=${`/details/${item._id}`} class="btn btn-info">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`)}`;
+
+        return itemTemp();
     }
 
     static updateNav() {

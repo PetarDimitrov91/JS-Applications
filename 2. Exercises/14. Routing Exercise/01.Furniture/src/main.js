@@ -8,9 +8,11 @@ import {Edit} from "./modules/Edit.js";
 import {Register} from "./modules/Register.js";
 import {Login} from "./modules/Login.js";
 
+
 const nav = new Navigation(document.body);
 
 const root = document.querySelector('main');
+
 
 const catalogView = new Catalog(root);
 const createView = new Create(root);

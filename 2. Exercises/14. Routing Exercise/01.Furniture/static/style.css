@@ -56,6 +56,7 @@ nav {
     display: inline-block;
     position: absolute;
     right: 16px;
+    top:35px;
     text-align: right;
 }
 
@@ -215,4 +216,37 @@ img {
 .err {
     color: red;
     font-size: 150%;
+}
+
+.search {
+    position: absolute;
+    top:25px;
+    left: 300px;
+    width: 200px;
+    height: 36px;
+    margin-top: 10px;
+    padding: 3px;
+    border-radius: 0cm;
+    text-align: center;
+}
+
+.searchBtn{
+    position: absolute;
+    top:35px;
+    left: 500px;
+    width: 100px;
+    height: 36px;
+    margin-left: 5px;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+    background-color: #010101;
+    border: none;
+    font-size: .875rem;
+
+}
+
+.searchBtn:hover {
+    background-color: #6c8b47;
+    color: white;
 }
