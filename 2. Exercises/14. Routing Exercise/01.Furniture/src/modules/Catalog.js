@@ -45,7 +45,6 @@ export class Catalog extends View {
                 </div>`)}`;
 
         return itemTemp();
-
     }
 }
 

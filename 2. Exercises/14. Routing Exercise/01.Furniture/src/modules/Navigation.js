@@ -13,7 +13,7 @@ export class Navigation extends View {
     prepareView(root) {
         const navTemp = () => html`
             <header>
-                <h1><a href="/">Furniture Store</a></h1>
+                <h1><a href="/" id="shopName">Furniture Store</a></h1>
                 <form @submit=${this.showResults.bind(this)} id="search-field">
                     <input type="search" name="search" class="search">
                     <input type="submit" class="searchBtn" value="Search"/>
@@ -51,6 +51,7 @@ export class Navigation extends View {
 
         const formData = new FormData(event.target);
         const make = formData.get('search')
+        event.target.reset();
 
         const searchedItems = this.loadSearchedItem(make);
 
