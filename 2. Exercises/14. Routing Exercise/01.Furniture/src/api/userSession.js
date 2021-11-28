@@ -24,6 +24,7 @@ async function register(email, password) {
 }
 
 async function logout() {
+    //remove await for the exam
     await get('/users/logout');
     sessionStorage.removeItem('userData');
 }
