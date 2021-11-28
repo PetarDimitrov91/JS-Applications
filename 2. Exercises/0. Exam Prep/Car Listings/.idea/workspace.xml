@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29f6704e-10c5-42c0-adbd-ec96f56797ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Games Play/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/.idea/Games Play.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/example.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/api/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/api/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/api/userSession.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/modules/allGamesView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/modules/createView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/modules/detailsView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/modules/editView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/modules/homeView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/modules/loginView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/modules/registerView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Games Play/src/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/createView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/createView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Games Play/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Games Play/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="29f6704e-10c5-42c0-adbd-ec96f56797ed" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +50,7 @@
       <updated>1638033500725</updated>
       <workItem from="1638033501934" duration="15409000" />
       <workItem from="1638093397042" duration="2134000" />
-      <workItem from="1638097042157" duration="2576000" />
+      <workItem from="1638097042157" duration="2577000" />
     </task>
     <servers />
   </component>
