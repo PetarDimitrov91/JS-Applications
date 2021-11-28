@@ -41,7 +41,7 @@ export function showCreate(ctx) {
         event.preventDefault();
 
         const formData = [...(new FormData(event.target)).entries()];
-        const car = formData.reduce((a, [k, v]) => Object.assign(a, {[k]: v}), {})
+        const car = formData.reduce((a, [k, v]) => Object.assign(a, {[k]: v}), {});
 
         if (formData.filter(([k, v]) => !v.trim()).length > 0) {
             alert('please fill all fields');
