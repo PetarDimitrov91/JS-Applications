@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29f6704e-10c5-42c0-adbd-ec96f56797ed" name="Changes" comment="" />
+    <list default="true" id="29f6704e-10c5-42c0-adbd-ec96f56797ed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/.idea/books_library.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/example.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/api/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/api/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/api/userSession.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/modules/catalogView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/modules/createView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/modules/detailsView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/modules/editView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/modules/loginView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/modules/my-booksView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/modules/registerView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Books Library/books_library/src/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +71,7 @@
       <workItem from="1638033501934" duration="15409000" />
       <workItem from="1638093397042" duration="2134000" />
       <workItem from="1638097042157" duration="2577000" />
+      <workItem from="1638547406102" duration="6651000" />
     </task>
     <servers />
   </component>

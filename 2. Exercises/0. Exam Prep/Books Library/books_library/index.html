@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Online Books Library</title>
+    <script src="/src/main.js" type="module"></script>
+</head>
+
+<body>
+<div id="container">
+
+    <header id="site-header">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <section class="navbar-dashboard">
+                <a href="/catalog">Dashboard</a>
+                <!-- Guest users -->
+                <div id="guest">
+                    <a class="button" href="/login">Login</a>
+                    <a class="button" href="/register">Register</a>
+                </div>
+                <!-- Logged-in users -->
+                <div id="user">
+                    <span id="greeting">Welcome, {email}</span>
+                    <a class="button" href="/my-books">My Books</a>
+                    <a class="button" href="/create">Add Book</a>
+                    <a id="logoutBtn" class="button" href="javascript:void(0)">Logout</a>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main id="site-content">
+    </main>
+
+    <footer id="site-footer">
+        <p>@OnlineBooksLibrary</p>
+    </footer>
+</div>
+</body>
+
+</html>
