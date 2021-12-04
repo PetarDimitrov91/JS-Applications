@@ -7,6 +7,10 @@ const logout = userSession.logout;
 const register = userSession.register;
 
 
+
+
+
+/*
 export async function getAllBooks() {
     return api.get('/data/books?sortBy=_createdOn%20desc');
 }
@@ -43,3 +47,4 @@ export async function userHasLiked(bookId, userId) {
     return api.get(`/data/likes?where=bookId%3D%22${bookId}%22%20and%20_ownerId%3D%22${userId}%22&count`);
 }
 
+*/
