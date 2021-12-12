@@ -1,1 +1,1 @@
-## This is my JS-Applications module, including all lections and exercises. 
+## This is my JS-Applications module, including all lectures and exercises. 
