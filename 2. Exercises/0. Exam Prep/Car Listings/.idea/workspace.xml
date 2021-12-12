@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29f6704e-10c5-42c0-adbd-ec96f56797ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/.idea/task.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/example.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/homeView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/loginView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/registerView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/catalogView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/createView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/detailsView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/editView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/searchView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Exam/task/src/api/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exam/task/src/api/data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Exam/task/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exam/task/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Exam/task/src/modules/homeView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Exam/task/src/modules/homeView.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +62,7 @@
       <workItem from="1638093397042" duration="2134000" />
       <workItem from="1638097042157" duration="2577000" />
       <workItem from="1638547406102" duration="6690000" />
-      <workItem from="1638599909844" duration="1617000" />
+      <workItem from="1638599909844" duration="2911000" />
     </task>
     <servers />
   </component>

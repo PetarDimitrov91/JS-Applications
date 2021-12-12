@@ -13,7 +13,6 @@ const homeTemp = () => html`
     </section>
 `;
 
-
 export function showHome(ctx) {
     ctx.render(homeTemp());
 }

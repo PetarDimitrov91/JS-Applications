@@ -1,50 +1,30 @@
 import * as api from './api.js';
 import * as userSession from './userSession.js';
 
-
 const login = userSession.login;
 const logout = userSession.logout;
 const register = userSession.register;
 
-
-
-
-
-/*
-export async function getAllBooks() {
-    return api.get('/data/books?sortBy=_createdOn%20desc');
+export function getAlbums() {
+    return api.get('/data/albums?sortBy=_createdOn%20desc&distinct=name');
 }
 
-export async function getBookById(id) {
-    return api.get('/data/books/' + id);
+export function getAlbumById(id) {
+    return api.get('/data/albums/' + id);
 }
 
-export async function createBook(book) {
-    return api.post('/data/books', book)
+export function createAlbum(album) {
+    return api.post('/data/albums', album);
 }
 
-export async function editBook(id, book) {
-    return api.put('/data/books/' + id, book);
+export function editAlbum(id, album) {
+    return api.put('/data/albums/' + id, album);
 }
 
-export function getMyBooks(userId) {
-    return api.get(`/data/books?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`);
+export function deleteAlbum(id) {
+    return api.del('/data/albums/' + id);
 }
 
-export function deleteBook(bookId) {
-    return api.del('/data/books/' + bookId);
+export function searchByName(query) {
+    return api.get(`/data/albums?where=name%20LIKE%20%22${query}%22`);
 }
-
-export async function getLikes(bookId) {
-    return api.get(`/data/likes?where=bookId%3D%22${bookId}%22&distinct=_ownerId&count`);
-}
-
-export async function like(bookId) {
-    return api.post('/data/likes', bookId)
-}
-
-export async function userHasLiked(bookId, userId) {
-    return api.get(`/data/likes?where=bookId%3D%22${bookId}%22%20and%20_ownerId%3D%22${userId}%22&count`);
-}
-
-*/
